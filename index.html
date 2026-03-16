@@ -374,13 +374,17 @@
             window.location.href = `https://line.me/R/msg/text/?${encodeURIComponent(FULL_INFO)}`; 
         }
 
-        function addCal() { 
-            const title = "諶寶連夫人追思奠禮";
-            const dates = "20260408T07030/20260408T08030"; 
-            const details = "地點：200基隆市仁愛區南榮路509巷2號";
-            const location = "200基隆市仁愛區南榮路509巷2號";
-            window.open(`https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${dates}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`); 
-        }
+function addCal() { 
+    const title = "諶寶連夫人追思奠禮";
+    // 台灣 07:00 = UTC 前一天 23:00 (20260407T230000Z)
+    // 台灣 09:30 = UTC 當天 01:30 (20260408T013000Z)
+    const dates = "20260407T230000Z/20260408T013000Z"; 
+    
+    const details = "地點：基隆殯儀館 崇仁廳\n地址：200基隆市仁愛區南榮路509巷2號";
+    const location = "200基隆市仁愛區南榮路509巷2號";
+    
+    window.open(`https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${dates}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`); 
+}
     </script>
 </body>
 </html>
